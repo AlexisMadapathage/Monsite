@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Alexis Madapathage - Développeur web</title>
+	<meta name="description"
+		content="Portfolio d'Alexis, développeur web spécialisé en JavaScript, React et Node.js. Découvrez mes projets et contactez-moi !">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Orbitron:wght@400&display=swap"
+		rel="stylesheet">
+	<link rel="icon" href="./favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+		integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<script src="scripts/projectsData.js" defer></script>
+	<script src="scripts/main.js" defer></script>
+
+
+	<!--Open Graph-->
+	<meta property="og:title" content="Portfolio d'Alexis - Développeur Web" />
+	<meta property="og:description"
+		content="Découvrez mes projets en JavaScript, React et Node.js. Contactez-moi pour vos besoins en développement web !" />
+	<meta property="og:image" content="https://alexismadapathage.github.io/MonSitePerso/assets/MA.webp" />
+	<meta property="og:url" content="https://alexismadapathage.github.io/MonSitePerso/" />
+	<meta property="og:type" content="website" />
+	<meta property="og:locale" content="fr_FR" />
+
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Portfolio d'Alexis - Développeur Web">
+	<meta name="twitter:description" content="Découvrez mes projets et contactez-moi !">
+	<meta name="twitter:image" content="https://alexismadapathage.github.io/MonSitePerso/assets/MA.webp">
+	<meta name="twitter:site" content="https://alexismadapathage.github.io/MonSitePerso/">
+
+	<!-- schema.org -->
+	<script type="application/ld+json">
+		{
+		  "@context": "https://schema.org",
+		  "@type": "Person",
+		  "name": "Alexis Madapathage",
+		  "jobTitle": "Développeur Web Full-Stack",
+		  "description": "Développeur spécialisé en JavaScript, React et Node.js. Découvrez mes projets et contactez-moi !",
+		  "image": "", 
+		  "url": "",
+		  "telephone": "+33 7 82 49 27 09",
+		  "address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Sète",
+			"postalCode": "34200",
+			"addressCountry": "FR"
+		  },
+		  "sameAs": [
+			"<!-- A COMPLETER-->"
+		  ]
+		}
+		</script>
+
+</head>
+
+<body>
+
+	<!-- Navigation Mobile -->
+	<nav class="mobile-nav">
+		<ul>
+			<li><a href="#about">À propos</a></li>
+			<li><a href="#skills">Skills</a></li>
+			<li><a href="#projects">Projets</a></li>
+			<li><a href="#contacts">Contact</a></li>
+		</ul>
+	</nav>
+
+	<!-- Navigation latérale sticky -->
+	<nav class="planet-nav">
+		<a href="#about" class="planet-link" data-label="À propos">
+			<i class="fa-solid fa-earth-europe"></i>
+		</a>
+		<a href="#skills" class="planet-link" data-label="Skills">
+			<i class="fa-solid fa-earth-europe"></i>
+		</a>
+		<a href="#projects" class="planet-link" data-label="Projets">
+			<i class="fa-solid fa-earth-europe"></i>
+		</a>
+		<a href="#contacts" class="planet-link" data-label="Contact">
+			<i class="fa-solid fa-earth-europe"></i>
+		</a>
+	</nav>
+
+	<header>
+		<div class="container">
+			<h1>Alexis Madapathage</h1>
+			<p>Développeur Web</p>
+		</div>
+	</header>
+
+	<section id="about">
+		<div class="container">
+			<div class="about-text">
+				<h2 class="reveal">Hey, moi c'est Alexis</h2>
+				<p>Développeur web passionné, touche-à-tout.<br>
+					Caméléon social et amateur de caféine (indispensable pour les longues
+					sessions de code), je suis un mélange d’ingéniosité et de créativité. J’aime
+					coder des interfaces intuitives, mais aussi discuter de tout et de rien – de
+					l'exploration spatiale aux derniers rebondissements géopolitiques (ô
+					combien il y en a) en passant par la meilleure recette de ramen (conseils
+					acceptés).
+					Ma capacité d'adaptation est mon plus grand atout : que ce soit pour
+					comprendre les besoins d’un projet ou les attentes d'un client, je m’efforce toujours pour trouver
+					la bonne approche.</p>
+			</div>
+			<div class="about-image">
+				<img src="assets/MA.webp" alt="PixAlexis">
+			</div>
+		</div>
+	</section>
+
+	<section id="skills">
+		<div class="container">
+			<h2 class="reveal">Skills</h2>
+			<div class="skills-list">
+				<div class="skill-category">
+					<h3><i class="fa-solid fa-gear"></i>Développement</h3>
+					<ul class="skill-icons">
+						<li><img src="assets/icons/html5.svg" alt="HTML"><span class="logo-label">HTML</span></li>
+						<li><img src="assets/icons/css.svg" alt="CSS"><span class="logo-label">CSS</span></li>
+						<li><img src="assets/icons/sass.svg" alt="SASS"><span class="logo-label">SASS</span></li>
+						<li><img src="assets/icons/javascript.svg" alt="JavaScript"><span
+								class="logo-label">Javascript</span></li>
+						<li><img src="assets/icons/react.svg" alt="React"><span class="logo-label">React</span></li>
+						<li><img src="assets/icons/nodedotjs.svg" alt="Node"><span class="logo-label">Node.js</span>
+						</li>
+						<li><img src="assets/icons/mongodb.svg" alt="MongoDB"><span class="logo-label">MongoDB</span>
+						</li>
+						<li><img src="assets/icons/dotenv.svg" alt="Dotenv"><span class="logo-label">Dotenv</span></li>
+					</ul>
+					<ul class="skill-names">
+						<li>HTML</li>
+						<li>CSS</li>
+						<li>SASS</li>
+						<li>JavaScript</li>
+						<li>React</li>
+						<li>Node.js</li>
+						<li>MongoDB</li>
+						<li>Dotenv</li>
+					</ul>
+				</div>
+				<div class="skill-category">
+					<h3><i class="fa-solid fa-wrench"></i>Outils</h3>
+					<ul class="skill-icons">
+						<li><img src="assets/icons/git.svg" alt="git"><span class="logo-label">Git</span></li>
+						<li><img src="assets/icons/github.svg" alt="Github"><span class="logo-label">Github</span></li>
+						<li><img src="assets/icons/figma.svg" alt="Figma"><span class="logo-label">Figma</span></li>
+						<li><img src="assets/icons/canva.svg" alt="Canva"><span class="logo-label">Canva</span></li>
+					</ul>
+					<ul class="skill-names">
+						<li>Git</li>
+						<li>Github</li>
+						<li>Figma</li>
+						<li>Canva</li>
+					</ul>
+				</div>
+				<div class="skill-category">
+					<h3><i class="fa-solid fa-book-atlas"></i>Savoir-faire</h3>
+					<ul class="skill-icons">
+						<li>Responsive Design</li>
+						<li>Optimisation SEO</li>
+						<li>Développement API</li>
+					</ul>
+					<ul class="skill-names">
+						<li>Responsive Design</li>
+						<li>Optimisation SEO</li>
+						<li>Développement API</li>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="projects">
+		<div class="container">
+			<h2 class="reveal">Projets</h2>
+			<div id="project-container" class="project-flex"></div>
+		</div>
+	</section>
+
+	<section id="contacts">
+		<div class="container">
+			<h2 class="reveal">Parlons-en</h2>
+			<p>Un projet génialissime à me confier ? Je suis tout ouïe.</p>
+			<form id="contact-form">
+				<label for="lastname">Nom </label>
+				<input type="text" id="lastname" name="lastname" required>
+
+				<label for="firstname">Prénom </label>
+				<input type="text" id="firstname" name="firstname" required>
+
+				<label for="email">Email</label>
+				<input type="email" id="email" name="email" required>
+
+				<label for="message">Message</label>
+				<textarea id="message" name="message" required></textarea>
+
+				<button type="submit">Envoyer</button>
+			</form>
+			<p id="form-status" class="form-message"></p>
+		</div>
+	</section>
+
+	<!-- FOOTER -->
+	<footer>
+		<div class="container">
+			<p>© Alexis Madapathage 2025 | Tous droits réservés</p>
+		</div>
+	</footer>
+
+</body>
+
+</html>

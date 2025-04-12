@@ -1,0 +1,137 @@
+// STRUCTURE GLOBALE DU SITE
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0;
+  }
+
+  .planet-nav {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 20px 10px;
+    backdrop-filter: blur(10px);
+  
+    .planet-link {
+      position: relative;
+      color: $secondary-color; 
+      font-size: 1.8rem;
+      transition: transform 0.3s ease;
+  
+      i {
+        transition: transform 0.3s ease;
+      }
+  
+      &::after {
+        content: attr(data-label);
+        position: absolute;
+        right: 35px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.9);
+        color: #000;
+        padding: 5px 10px;
+        border-radius: 12px;
+        font-size: 0.9rem;
+        font-family: $font-primary;
+        opacity: 0;
+        white-space: nowrap;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+  
+      &:hover i {
+        transform: scale(1.2);
+      }
+  
+      &:hover::after {
+        opacity: 1;
+      }
+    }
+  }
+  
+  // HEADER (Disposition uniquement)
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+  
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+  
+      li a {
+        text-decoration: none;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+  
+  // SECTION SKILLS
+  .skills-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+  
+    .skill-category {
+      flex: 1;
+      max-width: 33%;
+      padding: 0 20px;
+    }
+  }
+  
+  // SECTION PROJECTS
+  .project-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .project {
+    flex: 0 1 calc(50% - 30px); // 2 colonnes avec un peu de marge
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+  
+    &:hover {
+      transform: translateY(-5px);
+    }
+  
+    h3 {
+      font-family: $font-secondary;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: white;
+    }
+  
+    p {
+      margin-bottom: 10px;
+      color: white;
+    }
+  
+    .tools-used {
+      font-size: 0.9rem;
+      color: white;
+    }
+  }    

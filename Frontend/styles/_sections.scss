@@ -1,0 +1,410 @@
+// STYLES VISUELS PAR SECTION
+
+// SECTION A PROPOS
+#about {
+  background-color: #1E3A8A;
+  height: 100%;
+
+  .container {
+    padding: 110px 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+      text-align: left;
+
+      h2 {
+        font-family: $font-secondary;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: white;
+        position: relative;
+
+        &::after {
+          content: "";
+          display: block;
+          width: 300px;
+          height: 4px;
+          background-color: $secondary-color;
+          margin: 10px 0 0;
+        }
+      }
+
+      p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+        color: white;
+
+        strong {
+          font-weight: bold;
+        }
+      }
+    }
+
+    .about-image {
+      flex: 1;
+      min-width: 250px;
+      display: flex;
+      justify-content: right;
+
+      img {
+        width: 100%;
+        max-width: 470px;
+        padding: 0;
+      }
+    }
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  #about {
+    padding-top: 30px; // corrige le bug sur Chrome/Edge
+  }
+}
+
+
+// SECTIONS COMMUNES : skills et projects
+#skills,
+#projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 90px 0;
+}
+
+// TITRES des sections
+#skills h2,
+#projects h2 {
+  position: relative;
+  font-family: $font-secondary;
+  font-size: 4rem;
+  padding-bottom: 50px;
+  color: $primary-color;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 150px;
+    height: 4px;
+    background-color: $secondary-color;
+    margin: 10px auto 0;
+  }
+}
+
+#skills .container {
+  max-width: 100%;
+  padding: 0 80px 0 0;
+  margin: 0;
+}
+
+// SECTION SKILLS : style visuel spécifique
+.skills-list {
+  background: #1E3A8A;
+  padding: 50px;
+
+  .skill-category {
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+
+    // Bordure verticale sauf pour le premier
+    &:not(:first-child) {
+      border-left: 4px solid $secondary-color;
+    }
+
+    h3 {
+      font-family: $font-secondary;
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      i {
+        font-size: 2rem;
+        color: white;
+      }
+    }
+
+    ul:not(.skill-names){
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+.logo-label {
+  margin-top: 5px;
+  font-size: 0.8rem;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+li:hover .logo-label {
+  opacity: 1;
+}
+
+
+.skill-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; // espace entre les icônes
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+
+  li {
+    flex: 0 1 calc(33.33% - 20px); // 3 logos par ligne
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    img {
+      width: 50px;
+      height: auto;
+      filter: brightness(0) invert(1);
+      transition: transform 0.2s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+.skill-names {
+  display: none;
+}
+
+
+// SECTION PROJECTS 
+.project {
+  background: $primary-color;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex: 0 1 calc(50% - 30px);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; // le lien reste en bas
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .project-content {
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    transition: opacity 0.3s ease;
+
+    // Quand on survole la carte, le contenu disparaît sauf le lien
+    .used-tools,
+    h3,
+    p {
+      transition: opacity 0.3s ease;
+    }
+  }
+
+  .project-link {
+    display: block;
+    padding: 6px 12px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: $primary-color;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .project-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 60px); //laisse la place au lien
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.4s ease-in-out;
+    cursor: pointer;
+
+    img {
+      width: 90%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &:hover {
+    .project-content {
+
+      h3,
+      p,
+      .used-tools {
+        opacity: 0;
+      }
+    }
+
+    .project-image-container {
+      opacity: 1;
+    }
+  }
+}
+
+.used-tools {
+  font-size: 0.9rem;
+  color: white;
+}
+
+
+// SECTION CONTACT
+#contacts {
+  background: url("../assets/Fond.webp") center/cover no-repeat;
+  padding: 80px 0;
+  color: white;
+  text-align: center;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 30px;
+  }
+
+  h2 {
+    font-family: $font-secondary;
+    font-size: 2.5rem;
+    color: white;
+    display: block;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 200px;
+      height: 3px;
+      background-color: $secondary-color;
+      margin: 10px auto 20px;
+    }
+  }
+
+  p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: $font-primary;
+    font-size: 1.1rem;
+  }
+
+  form {
+    background: rgba(0, 0, 30, 0.7);
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    label {
+      text-align: left;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid $secondary-color;
+      color: white;
+      font-size: 1rem;
+      font-family: $font-primary;
+
+      &:focus {
+        outline: none;
+        border-bottom-color: lighten($secondary-color, 10%);
+      }
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    button {
+      align-self: center;
+      background-color: $primary-color;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      cursor: pointer;
+      font-family: $font-secondary;
+      font-size: 1rem;
+      margin-top: 20px;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+}
+
+.form-message {
+  margin-top: 1rem;
+  font-weight: 600;
+  color: green;
+  text-align: center;
+  transition: opacity 0.3s ease;
+}
+
+.form-message.error {
+  color: red;
+}
+
+
+// FOOTER
+footer {
+  background-color: $background-color;
+  text-align: center;
+  padding: 10px 0;
+
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+
+  p {
+    margin: 0;
+    color: $text-color;
+    font-family: $font-primary;
+    font-size: 0.9rem;
+  }
+}

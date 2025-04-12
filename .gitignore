@@ -1,0 +1,42 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Environment variables
+.env
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# MongoDB data dumps
+dump/
+
+# IDEs / editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# System files
+Thumbs.db
+
+# Build outputs
+dist/
+build/
+
+# Admin files (interface privée non publique)
+frontend/admin.html
+frontend/styles/admin.scss
+frontend/scripts/admin.js

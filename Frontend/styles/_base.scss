@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: $font-primary; // Poppins par défaut
+    background-color: $background-color;
+    color: $text-color;
+    line-height: 1.6;
+}
+
+// Applique Orbitron aux titres
+h1, h2, h3 {
+    font-family: $font-secondary; 
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 300px; 
+        height: 2px; // Hauteur de la barre
+        background-color: $secondary-color; 
+        margin: 10px auto 0;
+    }
+}
+
+header {
+    background: url("../assets/Fond.webp") center/cover no-repeat;
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .project.hovered {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
