@@ -1,66 +1,83 @@
 // STYLES VISUELS PAR SECTION
 
 // SECTION A PROPOS
-#about {
-  background-color: #1E3A8A;
-  height: 100%;
-
-  .container {
+  #about {
+    background-color: #1E3A8A;
     padding: 110px 0 0 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    flex-wrap: wrap;
-
-    .about-text {
-      flex: 1;
-      min-width: 300px;
-      text-align: left;
-
-      h2 {
-        font-family: $font-secondary;
-        font-size: 2.5rem;
-        margin-bottom: 20px;
-        color: white;
-        position: relative;
-
-        &::after {
-          content: "";
-          display: block;
-          width: 300px;
-          height: 4px;
-          background-color: $secondary-color;
-          margin: 10px 0 0;
-        }
-      }
-
-      p {
-        font-size: 1.1rem;
-        margin-bottom: 1.5rem;
-        line-height: 1.6;
-        color: white;
-
-        strong {
-          font-weight: bold;
-        }
-      }
-    }
-
-    .about-image {
-      flex: 1;
-      min-width: 250px;
+    min-height: 100vh;
+  
+    .container {
       display: flex;
-      justify-content: right;
-
-      img {
-        width: 100%;
-        max-width: 470px;
-        padding: 0;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      padding-top: 85px;
+  
+      .about-text {
+        flex: 1;
+        min-width: 300px;
+        text-align: left;
+  
+        h2 {
+          font-family: $font-secondary;
+          font-size: 2.5rem;
+          margin-bottom: 20px;
+          color: white;
+          position: relative;
+  
+          &::after {
+            content: "";
+            display: block;
+            width: 300px;
+            height: 4px;
+            background-color: $secondary-color;
+            margin-top: 10px;
+          }
+        }
+  
+        p {
+          font-size: 1.1rem;
+          margin-bottom: 1.5rem;
+          line-height: 1.6;
+          color: white;
+        }
+  
+        .social-links {
+          margin-top: 20px;
+          font-size: 1.2rem;
+  
+          a {
+            color: $secondary-color;
+            margin: 0 10px;
+            text-decoration: none;
+  
+            i {
+              margin-right: 5px;
+            }
+  
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+  
+      .about-image {
+        flex: 1;
+        min-width: 250px;
+        display: flex;
+        justify-content: flex-end;
+  
+        img {
+          width: 100%;
+          max-width: 470px;
+          height: auto;
+          object-fit: contain;
+        }
       }
     }
   }
-}
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   #about {
@@ -387,6 +404,45 @@ li:hover .logo-label {
 
 .form-message.error {
   color: red;
+}
+
+/* Style pour la barre de navigation à gauche */
+.social-nav-left {
+  position: absolute;
+  left: 0;  /* Positionne à gauche de la page */
+  top: 50%;
+  transform: translateY(-50%);  /* Centrer verticalement */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  visibility: hidden;  /* Par défaut, elle est cachée */
+  opacity: 0;
+  transition: opacity 0.5s ease, visibility 0s 0.5s; /* Animation pour l'apparition */
+}
+
+/* Lorsque l'on est dans la section 'Parlons-en', la barre devient visible */
+#contacts:focus-within .social-nav-left {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+/* Style des liens (icones LinkedIn et GitHub) */
+.social-nav-left a {
+  font-size: 24px;
+  color: #fff; /* Couleur des icônes */
+}
+
+/* Style des icônes */
+.social-nav-left img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Effet au survol */
+.social-nav-left a:hover img {
+  transform: scale(1.2); /* Agrandissement au survol */
 }
 
 

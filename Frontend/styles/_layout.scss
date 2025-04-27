@@ -135,3 +135,29 @@
       color: white;
     }
   }    
+
+  .cookie-banner {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 50, 0.9);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.95rem;
+    z-index: 9999;
+  
+    button {
+      margin-left: 10px;
+      background-color: $secondary-color;
+      border: none;
+      color: white;
+      padding: 5px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+  
+      &:hover {
+        background-color: darken($secondary-color, 10%);
+      }
+    }
+  }

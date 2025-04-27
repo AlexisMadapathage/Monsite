@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -179,17 +180,42 @@ header nav ul li a {
   color: white;
 }
 
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 50, 0.9);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.95rem;
+  z-index: 9999;
+}
+.cookie-banner button {
+  margin-left: 10px;
+  background-color: #FBBF24;
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.cookie-banner button:hover {
+  background-color: #e8a804;
+}
+
 #about {
   background-color: #1E3A8A;
-  height: 100%;
+  padding: 110px 0 0 0;
+  min-height: 100vh;
 }
 #about .container {
-  padding: 110px 0 0 0;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   gap: 40px;
   flex-wrap: wrap;
+  padding-top: 85px;
 }
 #about .container .about-text {
   flex: 1;
@@ -209,7 +235,7 @@ header nav ul li a {
   width: 300px;
   height: 4px;
   background-color: #FBBF24;
-  margin: 10px 0 0;
+  margin-top: 10px;
 }
 #about .container .about-text p {
   font-size: 1.1rem;
@@ -217,19 +243,33 @@ header nav ul li a {
   line-height: 1.6;
   color: white;
 }
-#about .container .about-text p strong {
-  font-weight: bold;
+#about .container .about-text .social-links {
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+#about .container .about-text .social-links a {
+  color: #FBBF24;
+  margin: 0 10px;
+  text-decoration: none;
+}
+#about .container .about-text .social-links a i {
+  margin-right: 5px;
+}
+#about .container .about-text .social-links a:hover {
+  text-decoration: underline;
 }
 #about .container .about-image {
   flex: 1;
   min-width: 250px;
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
 }
 #about .container .about-image img {
   width: 100%;
   max-width: 470px;
-  padding: 0;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
@@ -513,6 +553,45 @@ li:hover .logo-label {
 
 .form-message.error {
   color: red;
+}
+
+/* Style pour la barre de navigation à gauche */
+.social-nav-left {
+  position: absolute;
+  left: 0; /* Positionne à gauche de la page */
+  top: 50%;
+  transform: translateY(-50%); /* Centrer verticalement */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  visibility: hidden; /* Par défaut, elle est cachée */
+  opacity: 0;
+  transition: opacity 0.5s ease, visibility 0s 0.5s; /* Animation pour l'apparition */
+}
+
+/* Lorsque l'on est dans la section 'Parlons-en', la barre devient visible */
+#contacts:focus-within .social-nav-left {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+/* Style des liens (icones LinkedIn et GitHub) */
+.social-nav-left a {
+  font-size: 24px;
+  color: #fff; /* Couleur des icônes */
+}
+
+/* Style des icônes */
+.social-nav-left img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Effet au survol */
+.social-nav-left a:hover img {
+  transform: scale(1.2); /* Agrandissement au survol */
 }
 
 footer {

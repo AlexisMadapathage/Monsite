@@ -130,64 +130,53 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
       message
     })
   })
-  .then(res => res.json())
-  .then(data => {
-    console.log("✅ Enregistré côté backend :", data);
-    // Affiche le message de confirmation
-    status.classList.remove("error");
-    status.textContent = "Message envoyé avec succès !";
-    document.getElementById("contact-form").reset();
-    setTimeout(() => (status.textContent = ""), 5000);
-  })
-  .catch(err => {
-    console.error("Erreur frontend :", err);
-    status.classList.add("error");
-    status.textContent = "Erreur lors de l'envoi.";
-  });  
+    .then(res => res.json())
+    .then(data => {
+      console.log("Enregistré côté backend :", data);
+      // Affiche le message de confirmation
+      status.classList.remove("error");
+      status.textContent = "Message envoyé avec succès !";
+      document.getElementById("contact-form").reset();
+      setTimeout(() => (status.textContent = ""), 5000);
+    })
+    .catch(err => {
+      console.error("Erreur frontend :", err);
+      status.classList.add("error");
+      status.textContent = "Erreur lors de l'envoi.";
+    });
 
-  // // ENVOI AVEC EMAILJS
-  // emailjs.sendForm(
-  //   "service_ge54haf",   // Ton SERVICE_ID EmailJS
-  //   "template_d70w9p9",  // Ton TEMPLATE_ID EmailJS
-  //   this                 // Le formulaire HTML lui-même
-  // )
-  //   .then(() => {
-  //     // Si EmailJS réussit, envoie aussi les données dans MongoDB via ton backend
-  //     fetch("http://localhost:5000/api/contact", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json"
-  //       },
-  //       body: JSON.stringify({
-  //         lastname: document.getElementById("lastname").value,
-  //         firstname: document.getElementById("firstname").value,
-  //         email: document.getElementById("email").value,
-  //         message: document.getElementById("message").value
-  //       })
-  //     })
-  //       .then(res => res.json())
-  //       .then(data => {
-  //         console.log("Message enregistré dans MongoDB :", data);
-  //       })
-  //       .catch(err => {
-  //         console.error("Erreur MongoDB :", err);
-  //       });
+    const socialNavLeft = document.querySelector(".social-nav-left");
 
-  //     // Affiche un message de succès
-  //     status.classList.remove("error");
-  //     status.textContent = "Message envoyé avec succès";
-  //     document.getElementById("contact-form").reset();
+    const toggleSocialNav = () => {
+      const contactsSection = document.getElementById("contacts");
+      const rect = contactsSection.getBoundingClientRect();
+    
+      if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+        socialNavLeft.style.display = "flex";
+      } else {
+        socialNavLeft.style.display = "none";
+      }
+    };
+    
+    window.addEventListener("scroll", toggleSocialNav);
+    window.addEventListener("load", toggleSocialNav);    
+});
 
-  //     // Cache le message après 5 secondes
-  //     setTimeout(() => {
-  //       status.textContent = "";
-  //     }, 5000);
+// Gestion des cookies
+document.addEventListener("DOMContentLoaded", () => {
+  const banner = document.getElementById("cookie-banner");
+  const acceptBtn = document.getElementById("accept-cookies");
 
-  //   })
-  //   .catch(function (error) {
-  //     // Si EmailJS échoue, affiche une erreur
-  //     status.classList.remove("error");
-  //     status.textContent = "Une erreur est survenue lors de l'envoi.";
-  //     status.classList.add("error");
-  //   });
+  if (banner && acceptBtn) {
+    if (!localStorage.getItem("cookiesAccepted")) {
+      banner.style.display = "block";
+    } else {
+      banner.style.display = "none";
+    }
+
+    acceptBtn.addEventListener("click", () => {
+      localStorage.setItem("cookiesAccepted", "true");
+      banner.style.display = "none";
+    });
+  }
 });
