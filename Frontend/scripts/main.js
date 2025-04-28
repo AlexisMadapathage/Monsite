@@ -118,7 +118,7 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
     return;
   }
 
-  fetch("http://localhost:5000/api/contact", {
+  fetch("monsite-production.up.railway.app", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
