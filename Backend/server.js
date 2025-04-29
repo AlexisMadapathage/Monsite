@@ -7,31 +7,31 @@ const contactRoutes = require("./routes/contact");
 
 const app = express();
 
-app.use(express.json());
-
-// Ajoute les bonnes options CORS
+// CORS 
 const corsOptions = {
   origin: [
-    'https://monsite-lemon.vercel.app', // site Vercel
-    'http://127.0.0.1:5500'              // Live Server
+    'https://monsite-lemon.vercel.app', // frontend en prod
+    'http://127.0.0.1:5500'              // frontend local
   ],
-  methods: ['GET', 'POST'],
-  credentials: true,
-  allowedHeaders: ['Content-Type']
+  methods: ['GET', 'POST', 'OPTIONS'],   // ne pas oublier OPTIONS !
+  allowedHeaders: ['Content-Type'],
+  credentials: true
 };
 
-// Utilise directement les bonnes options
-app.use(cors(corsOptions)); // important pour répondre au pré-vol CORS
-app.options('*', cors(corsOptions)); // middleware CORS principal
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions)); // GÈRE LES REQUÊTES OPTIONS PRÉVOL
+
+// Middleware
+app.use(express.json());
 
 // Routes
 app.use("/api/contact", contactRoutes);
 
-// Connexion à MongoDB + lancement serveur
+// Connexion MongoDB
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log("Connecté à MongoDB");
-    app.listen(process.env.PORT, '0.0.0.0', () => {
+    app.listen(process.env.PORT || 5000, '0.0.0.0', () => {
       console.log(`Serveur lancé sur port ${process.env.PORT}`);
     });
   })
