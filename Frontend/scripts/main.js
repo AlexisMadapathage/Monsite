@@ -118,7 +118,11 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
     return;
   }
 
-  fetch("https://monsite-production.up.railway.app/api/contact", {
+  const API_BASE_URL = window.location.hostname.includes('localhost') || window.location.hostname.includes('127.0.0.1')
+  ? 'http://localhost:5000'
+  : 'https://monsite-production.up.railway.app';
+
+fetch(`${API_BASE_URL}/api/contact`, {
     method: "POST",
     mode: "cors",
     headers: {
