@@ -2,6 +2,7 @@
 const nodemailer = require("nodemailer");
 require("dotenv").config();
 
+//création d'un transporteur SMTP pour envoyer des emails via Gmail
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
@@ -13,6 +14,7 @@ const transporter = nodemailer.createTransport({
   }
 });
 
+//Envoi du mail de confirmation via Gmail
 function sendConfirmationEmail(to, firstname) {
   const mailOptions = {
     from: process.env.MAIL_USER,

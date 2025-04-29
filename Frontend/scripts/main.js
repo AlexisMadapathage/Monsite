@@ -120,6 +120,7 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
 
   fetch("https://monsite-production.up.railway.app/api/contact", {
     method: "POST",
+    mode: "cors",
     headers: {
       "Content-Type": "application/json"
     },

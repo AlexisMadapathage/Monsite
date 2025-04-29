@@ -7,18 +7,20 @@ const contactRoutes = require("./routes/contact");
 
 const app = express();
 
-// ➔ Ajoute les bonnes options CORS
+// Ajoute les bonnes options CORS
 const corsOptions = {
   origin: [
     'https://monsite-lemon.vercel.app', // site Vercel
     'http://127.0.0.1:5500'              // Live Server
   ],
   methods: ['GET', 'POST'],
+  credentials: true,
   allowedHeaders: ['Content-Type']
 };
 
-// ➔ Utilise directement les bonnes options
+// Utilise directement les bonnes options
 app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 
 app.use(express.json());
 

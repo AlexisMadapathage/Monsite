@@ -3,9 +3,11 @@ const router = express.Router();
 const Message = require("../models/Message");
 const sendConfirmationEmail = require("../utils/mailer");
 
+//Récupérer les informations utilisateurs
 router.post("/", async (req, res) => {
   const { lastname, firstname, email, message } = req.body;
 
+  //nouvelle instance du modèle Message et tu la sauvegardes dans MongoDB
   try {
     const newMessage = new Message({ lastname, firstname, email, message });
     await newMessage.save();
