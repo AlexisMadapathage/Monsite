@@ -7,6 +7,8 @@ const contactRoutes = require("./routes/contact");
 
 const app = express();
 
+app.use(express.json());
+
 // Ajoute les bonnes options CORS
 const corsOptions = {
   origin: [
@@ -19,10 +21,8 @@ const corsOptions = {
 };
 
 // Utilise directement les bonnes options
-app.use(cors(corsOptions));
-app.options('*', cors(corsOptions));
-
-app.use(express.json());
+app.use(cors(corsOptions)); // important pour répondre au pré-vol CORS
+app.options('*', cors(corsOptions)); // middleware CORS principal
 
 // Routes
 app.use("/api/contact", contactRoutes);
