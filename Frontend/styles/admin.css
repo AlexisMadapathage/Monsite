@@ -1,5 +1,5 @@
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Orbit", sans-serif;
   background-color: #F9FAFB;
   margin: 0;
   padding: 2rem;
@@ -12,9 +12,9 @@ body {
 }
 .admin-container h1 {
   text-align: center;
-  color: #1E3A8A;
+  color: #000021;
   margin-bottom: 2rem;
-  font-family: "Orbitron", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .message-card {
@@ -30,7 +30,7 @@ body {
 }
 .message-card h3 {
   margin-top: 0;
-  color: #1E3A8A;
+  color: #000021;
 }
 .message-card p {
   margin: 0.5rem 0;

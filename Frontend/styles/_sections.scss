@@ -2,7 +2,7 @@
 
 // SECTION A PROPOS
   #about {
-    background-color: #1E3A8A;
+    background-color: $primary-color;
     padding: 110px 0 0 0;
     min-height: 100vh;
   
@@ -124,7 +124,7 @@
 
 // SECTION SKILLS : style visuel spécifique
 .skills-list {
-  background: #1E3A8A;
+  background: $primary-color;
   padding: 50px;
 
   .skill-category {
@@ -377,7 +377,7 @@ li:hover .logo-label {
 
     button {
       align-self: center;
-      background-color: $primary-color;
+      background-color: #1E3A8A;
       color: white;
       border: none;
       padding: 12px 25px;

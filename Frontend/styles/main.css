@@ -6,14 +6,14 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Orbit", sans-serif;
   background-color: #F9FAFB;
   color: #333;
   line-height: 1.6;
 }
 
 h1, h2, h3 {
-  font-family: "Orbitron", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 h1 {
@@ -100,7 +100,7 @@ header {
   padding: 5px 10px;
   border-radius: 12px;
   font-size: 0.9rem;
-  font-family: "Poppins", sans-serif;
+  font-family: "Orbit", sans-serif;
   opacity: 0;
   white-space: nowrap;
   pointer-events: none;
@@ -166,7 +166,7 @@ header nav ul li a {
   transform: translateY(-5px);
 }
 .project h3 {
-  font-family: "Orbitron", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1.4rem;
   margin-bottom: 10px;
   color: white;
@@ -205,7 +205,7 @@ header nav ul li a {
 }
 
 #about {
-  background-color: #1E3A8A;
+  background-color: #000021;
   padding: 110px 0 0 0;
   min-height: 100vh;
 }
@@ -223,7 +223,7 @@ header nav ul li a {
   text-align: left;
 }
 #about .container .about-text h2 {
-  font-family: "Orbitron", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 2.5rem;
   margin-bottom: 20px;
   color: white;
@@ -290,10 +290,10 @@ header nav ul li a {
 #skills h2,
 #projects h2 {
   position: relative;
-  font-family: "Orbitron", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 4rem;
   padding-bottom: 50px;
-  color: #1E3A8A;
+  color: #000021;
 }
 #skills h2::after,
 #projects h2::after {
@@ -312,7 +312,7 @@ header nav ul li a {
 }
 
 .skills-list {
-  background: #1E3A8A;
+  background: #000021;
   padding: 50px;
 }
 .skills-list .skill-category {
@@ -324,7 +324,7 @@ header nav ul li a {
   border-left: 4px solid #FBBF24;
 }
 .skills-list .skill-category h3 {
-  font-family: "Orbitron", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1.6rem;
   margin-bottom: 20px;
   display: inline-flex;
@@ -388,7 +388,7 @@ li:hover .logo-label {
 }
 
 .project {
-  background: #1E3A8A;
+  background: #000021;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   flex: 0 1 calc(50% - 30px);
@@ -420,7 +420,7 @@ li:hover .logo-label {
   color: white;
   font-weight: bold;
   text-decoration: none;
-  background-color: #1E3A8A;
+  background-color: #000021;
   position: relative;
   z-index: 2;
   text-align: center;
@@ -474,7 +474,7 @@ li:hover .logo-label {
   gap: 30px;
 }
 #contacts h2 {
-  font-family: "Orbitron", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 2.5rem;
   color: white;
   display: block;
@@ -490,7 +490,7 @@ li:hover .logo-label {
 #contacts p {
   max-width: 600px;
   margin: 0 auto;
-  font-family: "Poppins", sans-serif;
+  font-family: "Orbit", sans-serif;
   font-size: 1.1rem;
 }
 #contacts form {
@@ -516,7 +516,7 @@ li:hover .logo-label {
   border-bottom: 2px solid #FBBF24;
   color: white;
   font-size: 1rem;
-  font-family: "Poppins", sans-serif;
+  font-family: "Orbit", sans-serif;
 }
 #contacts form input:focus,
 #contacts form textarea:focus {
@@ -534,13 +534,13 @@ li:hover .logo-label {
   border: none;
   padding: 12px 25px;
   cursor: pointer;
-  font-family: "Orbitron", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1rem;
   margin-top: 20px;
   transition: background-color 0.3s;
 }
 #contacts form button:hover {
-  background-color: #152860;
+  background-color: black;
 }
 
 .form-message {
@@ -606,13 +606,13 @@ footer .container {
 footer p {
   margin: 0;
   color: #333;
-  font-family: "Poppins", sans-serif;
+  font-family: "Orbit", sans-serif;
   font-size: 0.9rem;
 }
 
 @media screen and (max-width: 768px) {
   header {
-    height: auto;
+    height: 100vh;
     padding: 60px 20px;
     flex-direction: column;
     gap: 10px;
