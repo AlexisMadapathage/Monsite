@@ -13,7 +13,7 @@ const corsOptions = {
     'https://monsite-lemon.vercel.app', // frontend en prod
     'http://127.0.0.1:5500'              // frontend local
   ],
-  methods: ['GET', 'POST', 'OPTIONS'],   // ne pas oublier OPTIONS !
+  methods: ['GET', 'POST', 'OPTIONS'],   
   allowedHeaders: ['Content-Type'],
   credentials: true
 };
@@ -32,8 +32,9 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log("Connecté à MongoDB");
     const PORT = process.env.PORT || 5000;
+    console.log("PORT utilisé :", PORT); // debug
 
-    app.listen(PORT, '0.0.0.0', () => {
+    app.listen(PORT, () => {
       console.log(`Serveur lancé sur port ${PORT}`);
     });
   })

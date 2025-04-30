@@ -612,7 +612,7 @@ footer p {
 
 @media screen and (max-width: 768px) {
   header {
-    height: 100vh;
+    height: 65vh;
     padding: 60px 20px;
     flex-direction: column;
     gap: 10px;
