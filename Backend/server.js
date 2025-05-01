@@ -31,7 +31,7 @@ app.use("/api/contact", contactRoutes);
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log("Connecté à MongoDB");
-    const PORT = process.env.PORT || 5000;
+    const PORT = process.env.PORT;
     console.log("PORT utilisé :", PORT); // debug
 
     app.listen(PORT, () => {
