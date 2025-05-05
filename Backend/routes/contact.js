@@ -44,4 +44,19 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
+// Gère manuellement les requêtes CORS prévol
+router.options("/", (req, res) => {
+  res.set("Access-Control-Allow-Origin", "https://monsite-lemon.vercel.app");
+  res.set("Access-Control-Allow-Headers", "Content-Type");
+  res.set("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.sendStatus(200);
+});
+
+router.options("/:id", (req, res) => {
+  res.set("Access-Control-Allow-Origin", "https://monsite-lemon.vercel.app");
+  res.set("Access-Control-Allow-Headers", "Content-Type");
+  res.set("Access-Control-Allow-Methods", "DELETE, OPTIONS");
+  res.sendStatus(200);
+});
+
 module.exports = router;
