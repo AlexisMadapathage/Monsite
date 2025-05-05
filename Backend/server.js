@@ -1,3 +1,5 @@
+console.log("Initialisation du serveur...");
+
 require ("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
@@ -19,6 +21,7 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+console.log("Middleware CORS appliqué");
 app.options('*', cors(corsOptions)); // GÈRE LES REQUÊTES OPTIONS PRÉVOL
 
 // Middleware
